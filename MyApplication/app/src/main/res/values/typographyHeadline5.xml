@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="typographyHeadline5">
+        <item name="font">@font/sourcesans_regular</item>
+        <item name="fontFamily">@font/sourcesans_medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+</resources>

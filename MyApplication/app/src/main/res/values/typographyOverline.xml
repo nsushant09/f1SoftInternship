@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="typographyOverline">
+        <item name="font">@font/sourcesans_regular</item>
+        <item name="fontFamily">@font/sourcesans_regular</item>
+        <item name="android:textSize">10sp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:letterSpacing">1.5</item>
+    </style>
+</resources>

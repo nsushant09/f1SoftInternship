@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="typographyButton">
+        <item name="font">@font/sourcesans_medium</item>
+        <item name="fontFamily">@font/sourcesans_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:letterSpacing">0.5</item>
+    </style>
+
+</resources>
