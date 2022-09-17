@@ -25,5 +25,11 @@ class MainActivity : AppCompatActivity() {
                 startActivity(this)
             }
         }
+
+        binding.btnDialogActivity.setOnClickListener {
+            Intent(this, DialogActivity::class.java).apply{
+                startActivity(this)
+            }
+        }
     }
 }
