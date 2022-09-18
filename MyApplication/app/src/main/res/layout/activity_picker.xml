@@ -52,4 +52,20 @@
         style="?attr/dateText"
         />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSimpleTimePicker"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time Picker"
+        android:layout_marginEnd="8dp"
+        />
+
+    <TextView
+        android:id="@+id/tvShowSelectedTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?attr/dateText"
+        />
+
 </LinearLayout>

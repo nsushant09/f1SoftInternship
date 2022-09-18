@@ -1,14 +1,21 @@
 package com.neupanesushant.materialdesignlearn
 
 import android.annotation.SuppressLint
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.format.DateFormat.getTimeFormat
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment.STYLE_NORMAL
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.datepicker.MaterialDatePicker.INPUT_MODE_CALENDAR
 import com.google.android.material.datepicker.MaterialDatePicker.INPUT_MODE_TEXT
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 import com.neupanesushant.materialdesignlearn.databinding.ActivityPickerBinding
+import java.text.DateFormat
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
 
 class PickerActivity : AppCompatActivity() {
 
@@ -31,6 +38,9 @@ class PickerActivity : AppCompatActivity() {
         }
         binding.btnSimpleCalenderPicker.setOnClickListener {
             showCalenderPicker()
+        }
+        binding.btnSimpleTimePicker.setOnClickListener {
+            showTimePicker()
         }
 
     }
@@ -86,6 +96,23 @@ class PickerActivity : AppCompatActivity() {
         calenderPicker.show(supportFragmentManager, "TAG")
         calenderPicker.addOnPositiveButtonClickListener {
             binding.tvShowSelected.text = SimpleDateFormat("dd/MM/yyyy").format(calenderPicker.selection).toString()
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun showTimePicker(){
+        val timePicker = MaterialTimePicker.Builder()
+            .setTimeFormat(TimeFormat.CLOCK_12H)
+            .setHour(LocalDateTime.now().hour)
+            .setMinute(LocalDateTime.now().minute)
+            .setTitleText("Select Time")
+            .build()
+
+//        android.text.format.DateFormat.getTimeFormat(this)
+        timePicker.show(supportFragmentManager, "TAG")
+        timePicker.addOnPositiveButtonClickListener{
+            binding.tvShowSelectedTime.text = "${timePicker.hour} : ${timePicker.minute}"
         }
     }
 
