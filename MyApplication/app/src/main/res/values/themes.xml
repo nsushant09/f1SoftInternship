@@ -24,28 +24,46 @@
 
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent</item>
 
-<!--        <item name="textAppearanceHeadline1">@style/typographyHeadline1</item>-->
-<!--        <item name="textAppearanceHeadline2">@style/typographyHeadline2</item>-->
-<!--        <item name="textAppearanceHeadline3">@style/typographyHeadline3</item>-->
-<!--        <item name="textAppearanceHeadline4">@style/typographyHeadline4</item>-->
-<!--        <item name="textAppearanceHeadline5">@style/typographyHeadline5</item>-->
-<!--        <item name="textAppearanceHeadline6">@style/typographyHeadline6</item>-->
+        <item name="textAppearanceHeadline1">@style/typographyHeadline1</item>
+        <item name="textAppearanceHeadline2">@style/typographyHeadline2</item>
+        <item name="textAppearanceHeadline3">@style/typographyHeadline3</item>
+        <item name="textAppearanceHeadline4">@style/typographyHeadline4</item>
+        <item name="textAppearanceHeadline5">@style/typographyHeadline5</item>
+        <item name="textAppearanceHeadline6">@style/typographyHeadline6</item>
 
-<!--        <item name="textAppearanceSubtitle1">@style/typographySubtitle1</item>-->
-<!--        <item name="textAppearanceSubtitle2">@style/typographySubtitle2</item>-->
+        <item name="textAppearanceSubtitle1">@style/typographySubtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/typographySubtitle2</item>
 
-<!--        <item name="textAppearanceBody1">@style/typographyBody1</item>-->
-<!--        <item name="textAppearanceBody2">@style/typographyBody2</item>-->
+        <item name="textAppearanceBody1">@style/typographyBody1</item>
+        <item name="textAppearanceBody2">@style/typographyBody2</item>
 
-<!--        <item name="textAppearanceCaption">@style/typographyCaption</item>-->
-<!--        <item name="textAppearanceOverline">@style/typographyOverline</item>-->
-<!--        <item name="textAppearanceButton">@style/typographyButton</item>-->
+        <item name="textAppearanceCaption">@style/typographyCaption</item>
+        <item name="textAppearanceOverline">@style/typographyOverline</item>
+        <item name="textAppearanceButton">@style/typographyButton</item>
+
+        <item name="paragraphText">@style/Theme.MaterialDesignLearn.ParagraphText</item>
+        <item name="dateText">@style/Theme.MaterialDesignLearn.DateText</item>
+
+    </style>
+
+    <style name="Theme.MaterialDesignLearn.ParagraphText">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="Theme.MaterialDesignLearn.DateText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 
     <style name="BottomSheetStyle" parent="Theme.MaterialComponents.BottomSheetDialog">
         <item name="android:windowIsFloating">false</item>
     </style>
 
+
+
+<!--    <style name=""-->
+    
     <style name="MaterialDialogs" parent="Theme.MaterialComponents.Dialog.Alert">
         <item name="colorSurface">@color/black</item>
         <item name="colorOnSurface">@color/white</item>

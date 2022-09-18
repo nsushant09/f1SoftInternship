@@ -37,5 +37,13 @@
 <!--        <item name="textAppearanceCaption">@style/typographyCaption</item>-->
 <!--        <item name="textAppearanceOverline">@style/typographyOverline</item>-->
 <!--        <item name="textAppearanceButton">@style/typographyButton</item>-->
+
+        <item name="dateText">@style/Theme.MaterialDesignLearn.DateText</item>
+    </style>
+
+    <style name="Theme.MaterialDesignLearn.DateText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 </resources>

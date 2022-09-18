@@ -31,5 +31,11 @@ class MainActivity : AppCompatActivity() {
                 startActivity(this)
             }
         }
+
+        binding.btnPickers.setOnClickListener {
+            Intent(this, PickerActivity::class.java).apply{
+                startActivity(this)
+            }
+        }
     }
 }

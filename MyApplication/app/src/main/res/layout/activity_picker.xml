@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".PickerActivity">
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSimpleDatePicker"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date Picker"
+        android:layout_marginEnd="8dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSimpleDateRangePicker"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date Range Picker"
+        android:layout_marginEnd="8dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSimpleInputPicker"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input Picker"
+        android:layout_marginEnd="8dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSimpleCalenderPicker"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calender Picker"
+        android:layout_marginEnd="8dp"
+        />
+
+    <TextView
+        android:id="@+id/tvShowSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?attr/dateText"
+        />
+
+</LinearLayout>
