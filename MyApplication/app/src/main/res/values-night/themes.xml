@@ -38,7 +38,13 @@
 <!--        <item name="textAppearanceOverline">@style/typographyOverline</item>-->
 <!--        <item name="textAppearanceButton">@style/typographyButton</item>-->
 
+        <item name="paragraphTextColor">@color/neon_orange</item>
+        <item name="paragraphText">@style/Theme.MaterialDesignLearn.ParagraphText</item>
         <item name="dateText">@style/Theme.MaterialDesignLearn.DateText</item>
+        <item name="booleanAttributeTest">true</item>
+        <item name="stringAttributeTest">@string/test_string</item>
+        <item name="paragraphTextPaddingAttr">@dimen/paragraphTextPadding</item>
+        <item name="integerAttributeTest">2</item>
     </style>
 
     <style name="Theme.MaterialDesignLearn.DateText">

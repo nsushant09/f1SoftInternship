@@ -1,3 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <attr name="headerBoxBackground" format="reference"/>
+    <attr name="headerBoxMiniCards" format="reference"/>
+    <attr name="headerBoxMiniCardsImage" format="reference"/>
+    <attr name="headerBoxMiniCardsIcons" format="reference"/>
+    <attr name="HeaderHeadlineText" format="reference"/>
+    <attr name="headerDollarSign" format="reference"/>
+    <attr name="home_recentText" format="reference"/>
+    <attr name="home_showallText" format="reference"/>
+    <attr name="RecyclerViewHeaderText" format="reference"/>
+
 </resources>

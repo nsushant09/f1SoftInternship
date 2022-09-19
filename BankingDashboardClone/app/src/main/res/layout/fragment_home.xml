@@ -1,14 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/colorSurface"
     tools:context=".fragments.Home">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cvHeaderBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:paddingTop="50dp"
+        android:paddingBottom="16dp"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/gradient_primary_color"
+        >
+
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="?attr/HeaderHeadlineText"
+
+
+            android:text="@string/home"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+                android:id="@+id/ivOutward"
+
+                app:layout_constraintRight_toLeftOf="@id/ivAdd"
+                app:layout_constraintTop_toTopOf="@id/tvTitle"
+                app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+
+                android:src="@drawable/ic_round_arrow_outward_24"
+                style="?attr/headerBoxMiniCardsImage"
+                android:contentDescription="@string/icon"
+                />
+
+        <ImageView
+            android:id="@+id/ivAdd"
+            app:layout_constraintRight_toLeftOf="@id/ivSearch"
+            app:layout_constraintTop_toTopOf="@id/tvTitle"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+
+            android:src="@drawable/ic_round_add_24"
+            style="?attr/headerBoxMiniCardsImage"
+            android:contentDescription="@string/icon" />
+
+        <ImageView
+            android:id="@+id/ivSearch"
+
+            app:layout_constraintRight_toLeftOf="@id/ivAndroid"
+            app:layout_constraintTop_toTopOf="@id/tvTitle"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+
+            android:src="@drawable/ic_round_search_24"
+            style="?attr/headerBoxMiniCardsImage"
+            android:contentDescription="@string/icon"
+            />
+
+        <ImageView
+            android:id="@+id/ivAndroid"
+
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTitle"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+
+            android:src="@drawable/ic_baseline_android_24"
+            style="?attr/headerBoxMiniCardsImage"
+            android:contentDescription="@string/icon"
+            />
+
+
+        <TextView
+            android:id="@+id/tvTotalBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_balance"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+
+            android:layout_marginTop="16dp"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:textColor="?attr/colorSecondary"
+            />
+
+        <TextView
+            android:id="@+id/tvDollarSign"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvBalanceAmount"
+            app:layout_constraintBottom_toBottomOf="@id/tvBalanceAmount"
+
+            android:text="$"
+            style="?attr/headerDollarSign"
+            />
+
+        <TextView
+            android:id="@+id/tvBalanceAmount"
+
+            app:layout_constraintTop_toBottomOf="@id/tvTotalBalance"
+            app:layout_constraintLeft_toRightOf="@id/tvDollarSign"
+
+            android:text="2,345"
+            style="?attr/HeaderHeadlineText"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvRecent"
+
+        android:text="@string/recent"
+        style="?attr/home_recentText"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnShowAll"
+        app:layout_constraintBottom_toBottomOf="@id/btnShowAll"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnShowAll"
+        android:text="@string/show_all"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvHeaderBox"
+
+        style="?attr/home_showallText"
+         />
+
+    <TextView
+        android:id="@+id/tvLastWeek"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnShowAll"
+
+        style="?attr/RecyclerViewHeaderText"
+        android:text="@string/last_week"
+        />
+
+    <ImageView
+        android:id="@+id/ivTest"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvLastWeekData"
+
+        android:src="@drawable/ic_round_arrow_outward_24"
+        style="?attr/headerBoxMiniCardsImage"
+        android:contentDescription="@string/icon"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/rvLastWeekData"
+
+        app:layout_constraintTop_toBottomOf="@id/tvLastWeek"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

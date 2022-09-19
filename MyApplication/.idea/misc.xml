@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/primary_gradient_color.xml" value="0.3085" />
         <entry key="app/src/main/res/layout/activity_bottom_sheet.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_dialog.xml" value="0.5911458333333334" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.29056865464632453" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3928028383172833" />
         <entry key="app/src/main/res/layout/activity_picker.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_text_fields.xml" value="0.4399175008138021" />
         <entry key="app/src/main/res/layout/items_list.xml" value="0.40260416666666665" />

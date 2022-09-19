@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/gradient_primary_color.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/headerbox_minicards_background.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/ic_baseline_credit_card_24.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/ic_home_selector.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/ic_outline_access_time_24.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/ic_outline_home_24.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/ic_outline_settings_24.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/ic_reports_selector.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/ic_round_arrow_outward_24.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/ic_settings_selector.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/positive_price_background.xml" value="0.2735" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/fragment_cards.xml" value="0.38958333333333334" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.45685740236148953" />
+        <entry key="app/src/main/res/layout/fragment_reports.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/last_week_data_recyclerview.xml" value="0.40260416666666665" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.40260416666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
