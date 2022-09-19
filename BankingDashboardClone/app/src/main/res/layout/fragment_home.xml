@@ -146,17 +146,6 @@
         android:text="@string/last_week"
         />
 
-    <ImageView
-        android:id="@+id/ivTest"
-
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rvLastWeekData"
-
-        android:src="@drawable/ic_round_arrow_outward_24"
-        style="?attr/headerBoxMiniCardsImage"
-        android:contentDescription="@string/icon"
-        />
-
     <androidx.recyclerview.widget.RecyclerView
 
         android:id="@+id/rvLastWeekData"
@@ -165,7 +154,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
 
+        android:background="@drawable/last_week_recyclerview_bg"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="4dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 

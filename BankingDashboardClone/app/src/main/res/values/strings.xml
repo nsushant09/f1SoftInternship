@@ -11,4 +11,8 @@
     <string name="recent">Recent</string>
     <string name="show_all">Show all</string>
     <string name="last_week">Last Week</string>
+    <string name="online_transactions">Online Transaction</string>
+    <string name="_2_48">2:48</string>
+    <string name="are_you_having_problem_with_this_transaction_nwe_ll_help_you">Are you having problem with this transaction? \nWe\'ll help you</string>
+    <string name="message_support">Message Support</string>
 </resources>

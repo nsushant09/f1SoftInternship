@@ -12,7 +12,7 @@ import com.neupanesushant.bankingdashboardclone.R
 import com.neupanesushant.bankingdashboardclone.databinding.LastWeekDataRecyclerviewBinding
 import com.neupanesushant.bankingdashboardclone.model.LastWeek
 
-class LastWeekDataAdapter(val context : Context, val itemsList : ArrayList<LastWeek>) : RecyclerView.Adapter<LastWeekDataAdapter.ViewHolder>() {
+class LastWeekDataAdapter(val context : Context, val itemsList : ArrayList<LastWeek>, val onClickItem : (LastWeek) -> Unit ) : RecyclerView.Adapter<LastWeekDataAdapter.ViewHolder>() {
     inner class ViewHolder(binding : LastWeekDataRecyclerviewBinding) : RecyclerView.ViewHolder(binding.root) {
         val image = binding.ivCompanyLogo
         val name = binding.tvCompanyName
@@ -40,6 +40,10 @@ class LastWeekDataAdapter(val context : Context, val itemsList : ArrayList<LastW
 
         holder.date.text = currentObj.date
         holder.name.text = currentObj.name
+
+        holder.itemView.setOnClickListener {
+            onClickItem(currentObj)
+        }
 
     }
 

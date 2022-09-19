@@ -1,13 +1,19 @@
 package com.neupanesushant.bankingdashboardclone.fragments
 
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.toDrawable
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.neupanesushant.bankingdashboardclone.R
 import com.neupanesushant.bankingdashboardclone.adapter.LastWeekDataAdapter
+import com.neupanesushant.bankingdashboardclone.adapter.addItemDecorationWithoutLastDivider
 import com.neupanesushant.bankingdashboardclone.databinding.FragmentHomeBinding
 import com.neupanesushant.bankingdashboardclone.model.LastWeek
 import com.squareup.picasso.Picasso
@@ -16,6 +22,11 @@ class Home : Fragment() {
 
     private var _binding : FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    val onClickOpenBottomSheet : (LastWeek) -> Unit = { lastWeekObject ->
+        val informationBottomSheet = InformationBottomSheet(lastWeekObject)
+        informationBottomSheet.show(parentFragmentManager, InformationBottomSheet.TAG)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,9 +40,14 @@ class Home : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val adapter = LastWeekDataAdapter(requireContext(), getItems())
-        binding.rvLastWeekData.layoutManager = LinearLayoutManager(requireContext())
+        val adapter = LastWeekDataAdapter(requireContext(), getItems(), onClickOpenBottomSheet)
+        binding.rvLastWeekData.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.rvLastWeekData.adapter = adapter
+        val dividerItemDecoration = DividerItemDecoration(binding.rvLastWeekData.context, DividerItemDecoration.VERTICAL)
+        ContextCompat.getDrawable(requireContext(), R.drawable.divider_drawable)
+            ?.let { dividerItemDecoration.setDrawable(it) }
+        binding.rvLastWeekData.addItemDecorationWithoutLastDivider()
+
     }
 
     fun getItems() : ArrayList<LastWeek>{

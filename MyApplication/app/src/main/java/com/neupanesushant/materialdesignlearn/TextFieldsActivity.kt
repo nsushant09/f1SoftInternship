@@ -14,7 +14,7 @@ class TextFieldsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnBack.setOnClickListener {
-            finish()
+             finish()
         }
 
         val dropDownItems = listOf<String>("Nepal", "India", "Australia", "United Kingdom")

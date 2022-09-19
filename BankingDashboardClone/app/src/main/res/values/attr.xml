@@ -10,5 +10,10 @@
     <attr name="home_recentText" format="reference"/>
     <attr name="home_showallText" format="reference"/>
     <attr name="RecyclerViewHeaderText" format="reference"/>
+    <attr name="RecyclerViewStylings" format="reference"/>
+    <attr name="ViewStylings" format="reference"/>
+    <attr name="BottomSheetLinkImageStylings" format="reference"/>
+    <attr name="BottomSheetCard" format="reference"/>
+    <attr name="MessageSupportMaterialButton" format="reference"/>
 
 </resources>

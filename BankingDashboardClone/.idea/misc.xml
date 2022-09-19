@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bottom_sheet_bg.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/divider_drawable.xml" value="0.2735" />
         <entry key="app/src/main/res/drawable/gradient_primary_color.xml" value="0.2735" />
         <entry key="app/src/main/res/drawable/headerbox_minicards_background.xml" value="0.2735" />
         <entry key="app/src/main/res/drawable/ic_baseline_credit_card_24.xml" value="0.2735" />
@@ -13,12 +15,14 @@
         <entry key="app/src/main/res/drawable/ic_reports_selector.xml" value="0.2735" />
         <entry key="app/src/main/res/drawable/ic_round_arrow_outward_24.xml" value="0.2735" />
         <entry key="app/src/main/res/drawable/ic_settings_selector.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/last_week_recyclerview_bg.xml" value="0.2735" />
         <entry key="app/src/main/res/drawable/positive_price_background.xml" value="0.2735" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_cards.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.45685740236148953" />
         <entry key="app/src/main/res/layout/fragment_reports.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/information_bottom_sheet.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/last_week_data_recyclerview.xml" value="0.40260416666666665" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.40260416666666665" />
       </map>

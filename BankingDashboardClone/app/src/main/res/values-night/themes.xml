@@ -40,6 +40,8 @@
         <item name="textAppearanceOverline">@style/typographyOverline</item>
         <item name="textAppearanceButton">@style/typographyButton</item>
 
+<!--        to change divider color-->
+        <item name="android:listDivider">@color/grey</item>
 
 <!--        attributes-->
         <item name="headerBoxBackground">@drawable/gradient_primary_color</item>
@@ -50,6 +52,11 @@
         <item name="home_recentText">@style/home_recentTextStyle</item>
         <item name="home_showallText">@style/home_showallTextStyle</item>
         <item name="RecyclerViewHeaderText">@style/RecyclerViewHeaderTextStyle</item>
-
+        <item name="RecyclerViewStylings">@style/RecyclerViewStyle </item>
+        <item name="ViewStylings">@style/ViewStyles</item>
+        <item name="BottomSheetLinkImageStylings">@style/BottomSheetLinkImageStyle</item>
+        <item name="BottomSheetCard">@style/BottomSheetCardOutlinedStyle</item>
+        <item name="MessageSupportMaterialButton">@style/MessageSupportButton</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
     </style>
 </resources>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:theme="@style/ThemeOverlay.App.BottomSheetDialog"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/ivCompanyLogo"
+
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvCompanyName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/ivCompanyLogo"
+        style="?attr/home_recentText"
+        />
+
+    <TextView
+        android:id="@+id/tvUpdateDate"
+        app:layout_constraintLeft_toRightOf="@id/ivCompanyLogo"
+        app:layout_constraintTop_toBottomOf="@id/tvCompanyName"
+        style="?attr/RecyclerViewHeaderText"
+        />
+
+    <ImageView
+        android:id="@+id/ivCancel"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:src="@drawable/ic_cancel_svgrepo_com"
+        style="?attr/headerBoxMiniCardsImage"
+        android:layout_marginEnd="0dp"
+        android:padding="8dp"
+        android:contentDescription="@string/icon"
+        app:tint="@color/black" />
+
+
+    <View
+        android:id="@+id/view1"
+        app:layout_constraintTop_toBottomOf="@id/ivCompanyLogo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        style="?attr/ViewStylings"
+        />
+
+    <TextView
+        android:id="@+id/tvOnlineTransactions"
+        app:layout_constraintTop_toBottomOf="@id/view1"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        android:text="@string/online_transactions"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="0dp"
+        style="?attr/home_recentText"
+        />
+
+    <TextView
+        android:id="@+id/tvTime"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvOnlineTransactions"
+        android:text="@string/_2_48"
+
+        android:layout_marginStart="0dp"
+        style="?attr/RecyclerViewHeaderText"
+        />
+
+    <TextView
+        android:id="@+id/tvAmount"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvOnlineTransactions"
+        app:layout_constraintBottom_toBottomOf="@id/tvTime"
+
+        android:padding="4dp"
+        style="?attr/home_recentText"
+        android:layout_marginEnd="0dp"
+        />
+
+    <ImageView
+        android:id="@+id/ivLinkImage"
+        style="?attr/BottomSheetLinkImageStylings"
+
+        app:layout_constraintTop_toBottomOf="@id/tvTime"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvWebsite"
+        app:layout_constraintTop_toTopOf="@id/ivLinkImage"
+        app:layout_constraintLeft_toRightOf="@id/ivLinkImage"
+        app:layout_constraintBottom_toBottomOf="@id/ivLinkImage"
+
+        style="?attr/home_recentText"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        style="?attr/BottomSheetCard"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWebsite"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            >
+
+            <TextView
+                android:id="@+id/tvCustomerSupport"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+
+                android:text="@string/online_transactions"
+                style="?attr/home_recentText"
+                />
+
+            <TextView
+                android:id="@+id/tvSupportingText"
+                app:layout_constraintTop_toBottomOf="@id/tvCustomerSupport"
+                app:layout_constraintLeft_toLeftOf="parent"
+
+                android:text="@string/are_you_having_problem_with_this_transaction_nwe_ll_help_you"
+                android:layout_marginTop="16dp"
+                style="?attr/RecyclerViewHeaderText"
+                />
+
+            <com.google.android.material.button.MaterialButton
+
+                app:layout_constraintTop_toBottomOf="@id/tvSupportingText"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                style="@style/MessageSupportButton"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
