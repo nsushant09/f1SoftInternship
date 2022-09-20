@@ -2,7 +2,6 @@ package com.neupanesushant.bankingdashboardclone.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -10,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.neupanesushant.bankingdashboardclone.R
 import com.neupanesushant.bankingdashboardclone.databinding.LastWeekDataRecyclerviewBinding
-import com.neupanesushant.bankingdashboardclone.model.LastWeek
+import com.neupanesushant.bankingdashboardclone.domain.LastWeek
 
-class LastWeekDataAdapter(val context : Context, val itemsList : ArrayList<LastWeek>, val onClickItem : (LastWeek) -> Unit ) : RecyclerView.Adapter<LastWeekDataAdapter.ViewHolder>() {
+class LastWeekDataAdapter(val context : Context, val itemsList : List<LastWeek>, val onClickItem : (LastWeek) -> Unit ) : RecyclerView.Adapter<LastWeekDataAdapter.ViewHolder>() {
     inner class ViewHolder(binding : LastWeekDataRecyclerviewBinding) : RecyclerView.ViewHolder(binding.root) {
         val image = binding.ivCompanyLogo
         val name = binding.tvCompanyName

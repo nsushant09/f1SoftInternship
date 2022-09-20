@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.navigation.NavigationBarView
 import com.neupanesushant.bankingdashboardclone.databinding.ActivityMainBinding
 import com.neupanesushant.bankingdashboardclone.fragments.Cards
 import com.neupanesushant.bankingdashboardclone.fragments.Home
 import com.neupanesushant.bankingdashboardclone.fragments.Reports
 import com.neupanesushant.bankingdashboardclone.fragments.Settings
+import com.neupanesushant.bankingdashboardclone.user_data.vm.UserDataViewModel
 
 class MainActivity : AppCompatActivity() {
 

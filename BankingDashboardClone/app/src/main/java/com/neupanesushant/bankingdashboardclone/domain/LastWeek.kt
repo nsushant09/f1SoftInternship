@@ -1,4 +1,4 @@
-package com.neupanesushant.bankingdashboardclone.model
+package com.neupanesushant.bankingdashboardclone.domain
 
 data class LastWeek (
     val name : String,
@@ -6,5 +6,4 @@ data class LastWeek (
     val image : String,
     val date : String,
     val price : Double,
-
-        )
+)

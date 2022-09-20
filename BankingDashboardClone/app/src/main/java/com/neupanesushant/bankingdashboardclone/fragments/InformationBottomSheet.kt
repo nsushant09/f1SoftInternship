@@ -1,6 +1,5 @@
 package com.neupanesushant.bankingdashboardclone.fragments
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.neupanesushant.bankingdashboardclone.R
 import com.neupanesushant.bankingdashboardclone.databinding.InformationBottomSheetBinding
-import com.neupanesushant.bankingdashboardclone.model.LastWeek
+import com.neupanesushant.bankingdashboardclone.domain.LastWeek
 
 class InformationBottomSheet(val selectedObject : LastWeek) : BottomSheetDialogFragment() {
 
