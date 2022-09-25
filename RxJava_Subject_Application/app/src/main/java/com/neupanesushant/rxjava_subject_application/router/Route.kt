@@ -1,4 +1,4 @@
-package com.example.retrofit.router
+package com.neupanesushant.rxjava_subject_application.router
 
 class Route {
 

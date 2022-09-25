@@ -1,4 +1,4 @@
-package com.example.retrofit.router
+package com.neupanesushant.rxjava_subject_application.router
 
 import io.reactivex.rxjava3.core.Observable
 
@@ -11,11 +11,9 @@ class RouteProvider(val mBaseUrl : String) {
 
     private fun initializeRoutes(){
         routes.put(RouteCodeConfig.TODOS, "todos")
-        routes.put(RouteCodeConfig.USERS, "users")
-        routes.put(RouteCodeConfig.POSTS, "posts")
     }
 
-    fun getUrl(routeCode : String) : Observable<Route>{
+    fun getUrl(routeCode : String) :Observable<Route>{
         val route = Route()
 
         if(routes.contains(routeCode)){

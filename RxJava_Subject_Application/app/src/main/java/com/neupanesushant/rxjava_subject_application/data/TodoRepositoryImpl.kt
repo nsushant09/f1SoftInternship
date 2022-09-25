@@ -1,26 +1,24 @@
-package com.example.retrofit.data
+package com.neupanesushant.rxjava_subject_application.data
 
-import com.example.retrofit.EndPoints
-import com.example.retrofit.domain.Todo
-import com.example.retrofit.domain.TodoRepository
-import com.example.retrofit.router.RouteCodeConfig
-import com.example.retrofit.router.RouteProvider
+import com.neupanesushant.rxjava_subject_application.api.EndPoints
+import com.neupanesushant.rxjava_subject_application.domain.Todo
+import com.neupanesushant.rxjava_subject_application.domain.TodoRepository
+import com.neupanesushant.rxjava_subject_application.router.RouteCodeConfig
+import com.neupanesushant.rxjava_subject_application.router.RouteProvider
 import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.subjects.Subject
 import org.koin.java.KoinJavaComponent.inject
 
 class TodoRepositoryImpl(
-//    val routeProvider : RouteProvider, val endPoints : EndPoints
+    val routeProvider : RouteProvider, val endPoints : EndPoints
     ) : TodoRepository {
 
-    val routeProvider : RouteProvider by inject(RouteProvider::class.java)
-    val endPoints : EndPoints by inject(EndPoints::class.java)
+    override fun getAllData(): Observable<List<Todo>> {
+        return routeProvider.getUrl(RouteCodeConfig.TODOS)
+            .flatMap {
+                endPoints.getAllData(it.getUrl())
+            }
 
-    override fun requestData(): Observable<List<Todo>> {
-     return routeProvider.getUrl(RouteCodeConfig.TODOS)
-         .take(1)
-         .flatMap { route ->
-             endPoints.getData(route.getUrl())
-         }
     }
 
 }

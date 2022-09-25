@@ -1,9 +1,7 @@
-package com.example.retrofit.router
+package com.neupanesushant.rxjava_subject_application.router
 
 class RouteCodeConfig {
     companion object{
         val TODOS = "TODOS"
-        val USERS = "USERS"
-        val POSTS = "POSTS"
     }
 }
