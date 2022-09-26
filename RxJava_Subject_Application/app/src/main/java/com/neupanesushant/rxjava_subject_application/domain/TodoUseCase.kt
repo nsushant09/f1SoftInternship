@@ -19,12 +19,7 @@ class TodoUseCase(
     var listOfAllItems: List<Todo> = listOf()
 
     fun getPublishSubject(completionType: String): PublishSubject<List<Todo>> {
-
-        if (listOfAllItems.size == 0) {
-            getAllData(completionType)
-        }else{
-            setSubjectOnNext(completionType)
-        }
+        getAllData(completionType)
         return publishSubject
     }
 
@@ -92,18 +87,5 @@ class TodoUseCase(
                 }
         )
     }
-
-//    private fun filterCompleteDataFromStoredList() : List<Todo>{
-//        return listOfAllItems.filter {
-//            it.completed
-//        }
-//    }
-//
-//    private fun filterIncompleteDataFromStoreList() : List<Todo>{
-//        return listOfAllItems.filter{
-//            !it.completed
-//        }
-//    }
-
 
 }
