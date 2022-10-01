@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="typographyBody1">
+        <item name="font">@font/sourcesans_regular</item>
+        <item name="fontFamily">@font/sourcesans_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0.2</item>
+    </style>
+
+    <style name="typographyBody2">
+        <item name="font">@font/sourcesans_regular</item>
+        <item name="fontFamily">@font/sourcesans_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0.25</item>
+    </style>
+
+    <style name="typographyButton">
+        <item name="font">@font/sourcesans_medium</item>
+        <item name="fontFamily">@font/sourcesans_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:letterSpacing">0.5</item>
+    </style>
+
+    <style name="typographyCaption">
+        <item name="font">@font/sourcesans_regular</item>
+        <item name="fontFamily">@font/sourcesans_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0.4</item>
+    </style>
+
+    <style name="typographyHeadline1">
+        <item name="font">@font/sourcesans_light</item>
+        <item name="fontFamily">@font/sourcesans_light</item>
+        <item name="android:textSize">96sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="typographyHeadline2">
+        <item name="font">@font/sourcesans_light</item>
+        <item name="fontFamily">@font/sourcesans_light</item>
+        <item name="android:textSize">60sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="typographyHeadline3">
+        <item name="font">@font/sourcesans_regular</item>
+        <item name="fontFamily">@font/sourcesans_regular</item>
+        <item name="android:textSize">48sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="typographyHeadline4">
+        <item name="font">@font/sourcesans_regular</item>
+        <item name="fontFamily">@font/sourcesans_regular</item>
+        <item name="android:textSize">34sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="typographyHeadline5">
+        <item name="font">@font/sourcesans_regular</item>
+        <item name="fontFamily">@font/sourcesans_medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="typographyHeadline6">
+        <item name="font">@font/sourcesans_medium</item>
+        <item name="fontFamily">@font/sourcesans_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0.15</item>
+    </style>
+
+    <style name="typographyOverline">
+        <item name="font">@font/sourcesans_regular</item>
+        <item name="fontFamily">@font/sourcesans_regular</item>
+        <item name="android:textSize">10sp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:letterSpacing">1.5</item>
+    </style>
+
+    <style name="typographySubtitle1">
+        <item name="font">@font/sourcesans_regular</item>
+        <item name="fontFamily">@font/sourcesans_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0.15</item>
+    </style>
+
+    <style name="typographySubtitle2">
+        <item name="font">@font/sourcesans_medium</item>
+        <item name="fontFamily">@font/sourcesans_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+</resources>
