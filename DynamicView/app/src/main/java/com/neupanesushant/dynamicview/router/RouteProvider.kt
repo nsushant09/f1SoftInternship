@@ -10,8 +10,8 @@ class RouteProvider(val mBaseUrl : String) {
     }
 
     private fun initializeRoutes(){
-        routes.put(RouteCodeConfig.OCCUPTATIONS, "/sr8B98VD")
-        routes.put(RouteCodeConfig.DYNAMIC_FORM, "/07XcFbHm")
+        routes.put(RouteCodeConfig.OCCUPTATIONS, "sr8B98VD")
+        routes.put(RouteCodeConfig.DYNAMIC_FORM, "07XcFbHm")
     }
 
     fun getUrl(routeCode : String) :Observable<Route>{

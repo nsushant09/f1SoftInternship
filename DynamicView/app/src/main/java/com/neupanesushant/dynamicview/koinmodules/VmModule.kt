@@ -5,7 +5,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 fun viewModelModules() = module {
-    viewModel{
+    viewModel<FormViewModel>{
         FormViewModel(get())
     }
 }

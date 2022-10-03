@@ -1,6 +1,7 @@
 package com.neupanesushant.dynamicview.koinmodules
 
 import com.google.gson.GsonBuilder
+import com.neupanesushant.dynamicview.api.EndPoints
 import okhttp3.Dispatcher
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -22,5 +23,9 @@ fun netModule(baseUrl : String) = module{
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build()
+    }
+
+    single<EndPoints>{
+        get<Retrofit>().create(EndPoints::class.java)
     }
 }
