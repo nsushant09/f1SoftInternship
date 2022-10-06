@@ -38,5 +38,9 @@
         <item name="textAppearanceOverline">@style/typographyOverline</item>
         <item name="textAppearanceButton">@style/typographyButton</item>
 
+
+        <item name="textInputEditTextAttribute">@style/textInputEditTextStyling</item>
+        <item name="textInputLayoutAttribute">@style/textInputLayoutStyling</item>
+
     </style>
 </resources>
