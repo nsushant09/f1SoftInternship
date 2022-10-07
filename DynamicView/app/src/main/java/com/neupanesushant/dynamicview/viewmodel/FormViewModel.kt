@@ -29,16 +29,16 @@ class FormViewModel(private val dynamicItemUseCase: DynamicItemUseCase) : ViewMo
                 .subscribe({
                     _itemsList.value = it.dynamicForm
                 },{
-                    Log.i("TAG", "Error on subscription")
+                    Log.i("TAG", "Error on subscription name : $it")
 
                 })
         )
 
     }
 
-    fun getOccupationsList(){
+    fun getOccupationsList(url : String){
         disposable.add(
-            dynamicItemUseCase.getOccupationsList()
+            dynamicItemUseCase.getOccupationsList(url)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

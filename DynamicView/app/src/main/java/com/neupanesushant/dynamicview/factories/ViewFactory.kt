@@ -8,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.neupanesushant.dynamicview.FormActivity
 import com.neupanesushant.dynamicview.data.model.Field
+import com.neupanesushant.dynamicview.viewmodel.FormViewModel
 
 class ViewFactory(private val context : Context ,private val field : Field) {
 
@@ -22,12 +23,12 @@ class ViewFactory(private val context : Context ,private val field : Field) {
             }else{
                 inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
             }
-            return CustomizedEditText(context, field.tag, field.label,inputType).getEditText()
+            return CustomizedEditText(context, field,inputType).getEditText()
 
-        }else if(field.inputType.equals("DATE")){
+        }else if(field.inputType.equals("DATE")) {
             return CustomizedDatePicker(context, field).getDatePickerButton()
         }else if(field.inputType.equals("DROPDOWN")){
-            return View(context)
+            return CustomizedDropDown(context, field).getDropDown()
         }else{
             return View(context)
         }

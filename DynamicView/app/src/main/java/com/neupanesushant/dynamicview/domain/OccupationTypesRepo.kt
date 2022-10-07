@@ -5,6 +5,6 @@ import io.reactivex.rxjava3.core.Observable
 
 interface OccupationTypesRepo {
 
-    fun getOccupationResponse() : Observable<OccupationResponse>
+    fun getOccupationResponse(url : String) : Observable<OccupationResponse>
 
 }

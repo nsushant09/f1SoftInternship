@@ -33,6 +33,7 @@ class CustomizedDatePicker {
         val calenderConstraints = CalendarConstraints.Builder()
             .setValidator(DateValidatorPointBackward.now())
             .build()
+
         datePicker = MaterialDatePicker.Builder.datePicker()
             .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
             .setInputMode(inputMode)

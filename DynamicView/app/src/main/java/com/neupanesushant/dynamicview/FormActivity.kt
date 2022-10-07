@@ -41,21 +41,16 @@ class FormActivity : AppCompatActivity() {
 //        val materialEditTextLayout : TextInputLayout
 //        val materialEditText : TextInputEditText
         viewModel.getItemsList()
-        viewModel.getOccupationsList()
 
         viewModel.itemsList.observe(this){
             Log.i("TAG", "Observing teh dynamic form list")
             it.forEach {
                 if(it.code == CODE){
                     it.fields.forEach {
-                        binding.layoutFormMain.addView(ViewFactory(this, it).getView())
+                        binding.layoutFormMain.addView(ViewFactory(this,it).getView())
                     }
                 }
             }
-        }
-
-        viewModel.occupationsList.observe(this){
-            Log.i("TAG", "The occupations list is : $it")
         }
     }
 

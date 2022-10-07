@@ -8,10 +8,7 @@ import com.neupanesushant.dynamicview.router.RouteProvider
 import io.reactivex.rxjava3.core.Observable
 
 class OccupationTypesRepoImpl(val routeProvider: RouteProvider, val endPoints: EndPoints) : OccupationTypesRepo {
-    override fun getOccupationResponse(): Observable<OccupationResponse> {
-        return routeProvider.getUrl(RouteCodeConfig.OCCUPTATIONS)
-            .flatMap {
-                endPoints.getOccupations(it.getUrl())
-            }
+    override fun getOccupationResponse(url : String): Observable<OccupationResponse> {
+        return endPoints.getOccupations(url)
     }
 }
