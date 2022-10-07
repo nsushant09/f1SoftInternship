@@ -9,6 +9,7 @@ import com.neupanesushant.dynamicview.data.model.Occupation
 import com.neupanesushant.dynamicview.domain.DynamicItemUseCase
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.kotlin.subscribeBy
 import io.reactivex.rxjava3.schedulers.Schedulers
 
 class FormViewModel(private val dynamicItemUseCase: DynamicItemUseCase) : ViewModel(){
@@ -41,11 +42,10 @@ class FormViewModel(private val dynamicItemUseCase: DynamicItemUseCase) : ViewMo
             dynamicItemUseCase.getOccupationsList(url)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
+                .subscribe {
                     _occupationsList.value = it
-                },{
-                    Log.i("TAG", "Error on occupations")
-                })
+                }
+
         )
     }
 

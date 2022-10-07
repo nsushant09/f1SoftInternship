@@ -1,11 +1,7 @@
 package com.neupanesushant.dynamicview.factories
 
-import android.app.Activity
 import android.content.Context
-import android.content.Intent
 import android.view.View
-import android.widget.Button
-import android.widget.DatePicker
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.datepicker.CalendarConstraints
@@ -13,21 +9,20 @@ import com.google.android.material.datepicker.DateValidatorPointBackward
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.datepicker.MaterialDatePicker.INPUT_MODE_CALENDAR
 import com.google.android.material.datepicker.MaterialDatePicker.INPUT_MODE_TEXT
-import com.neupanesushant.dynamicview.FormActivity
-import com.neupanesushant.dynamicview.R
 import com.neupanesushant.dynamicview.data.model.Field
+import com.neupanesushant.dynamicview.viewmodel.FormViewModel
 
 class CustomizedDatePicker {
 
-    private lateinit var datePicker : MaterialDatePicker<Long>
-    private lateinit var datePickerButton : MaterialButton
+    private lateinit var datePicker: MaterialDatePicker<Long>
+    private lateinit var datePickerButton: MaterialButton
 
-    constructor(context : Context, field : Field){
+    constructor(context: Context, viewModel: FormViewModel, field: Field) {
 
-        val inputMode : Int
-        if(field.inputType.equals("TEXT")){
+        val inputMode: Int
+        if (field.inputType.equals("TEXT")) {
             inputMode = INPUT_MODE_TEXT
-        }else{
+        } else {
             inputMode = INPUT_MODE_CALENDAR
         }
         val calenderConstraints = CalendarConstraints.Builder()
@@ -50,7 +45,7 @@ class CustomizedDatePicker {
         }
     }
 
-    fun getDatePickerButton() : View{
+    fun getDatePickerButton(): View {
         return datePickerButton
     }
 

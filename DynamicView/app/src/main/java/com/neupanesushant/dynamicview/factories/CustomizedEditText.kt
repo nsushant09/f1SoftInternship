@@ -3,24 +3,17 @@ package com.neupanesushant.dynamicview.factories
 import android.content.Context
 import android.text.InputType
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.LinearLayout
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import com.neupanesushant.dynamicview.R
 import com.neupanesushant.dynamicview.data.model.Field
-import com.neupanesushant.dynamicview.data.model.Occupation
-import com.neupanesushant.dynamicview.domain.DynamicItemUseCase
 import com.neupanesushant.dynamicview.viewmodel.FormViewModel
-import org.koin.android.ext.android.inject
-import org.koin.java.KoinJavaComponent.inject
 
 class CustomizedEditText {
     private val inputLayout: TextInputLayout
     private val inputEditText: TextInputEditText
 
-    constructor(context: Context, field : Field, inputType: Int) {
+    constructor(context: Context, viewModel: FormViewModel, field: Field, inputType: Int) {
         inputLayout = TextInputLayout(context)
         inputEditText = TextInputEditText(context)
 
@@ -52,9 +45,6 @@ class CustomizedEditText {
     fun getEditText(): View {
         return inputLayout
     }
-
-
-
 
 
 }

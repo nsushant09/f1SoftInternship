@@ -47,11 +47,12 @@ class FormActivity : AppCompatActivity() {
             it.forEach {
                 if(it.code == CODE){
                     it.fields.forEach {
-                        binding.layoutFormMain.addView(ViewFactory(this,it).getView())
+                        binding.layoutFormMain.addView(ViewFactory(this,viewModel,it).getView())
                     }
                 }
             }
         }
+
     }
 
 }
