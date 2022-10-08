@@ -38,7 +38,13 @@ class CustomizedDropDown {
             com.google.android.material.R.style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu
         )
         spinner = Spinner(context)
-        inputLayout.hint = field.label
+
+        if(field.required){
+            inputLayout.hint = field.label + " *"
+        }else{
+            inputLayout.hint = field.label
+        }
+
         spinner.tag = field.tag
 
         val inputLayoutParams = LinearLayout.LayoutParams(

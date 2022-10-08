@@ -36,7 +36,12 @@ class CustomizedDatePicker {
 
 
         datePickerButton = MaterialButton(context)
-        datePickerButton.text = field.label
+
+        if(field.required){
+            datePickerButton.text = field.label + " *"
+        }else{
+            datePickerButton.text = field.label
+        }
 
 
         datePickerButton.setOnClickListener {

@@ -9,15 +9,23 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.neupanesushant.dynamicview.R
 import com.neupanesushant.dynamicview.data.model.Field
+import com.neupanesushant.dynamicview.data.model.InputValidation
+import com.neupanesushant.dynamicview.getLifeCycleOwner
 import com.neupanesushant.dynamicview.viewmodel.FormViewModel
 
 class CustomizedEditText {
     private val inputLayout: TextInputLayout
     private val inputEditText: TextInputEditText
+    private val mViewModel : FormViewModel
+    private val mContext : Context
+    private val mField : Field
 
     constructor(context: Context, viewModel: FormViewModel, field: Field, inputType: Int) {
         inputLayout = TextInputLayout(context, null, R.attr.textInputLayoutAttribute)
         inputEditText = TextInputEditText(context)
+        mContext = context
+        mViewModel = viewModel
+        mField = field
 
         val inputEditTextParams = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -35,7 +43,11 @@ class CustomizedEditText {
         inputLayout.setPadding(4, 2, 4, 2)
         inputEditText.layoutParams = inputEditTextParams
 
-        inputEditText.hint = field.label
+        if(field.required){
+            inputEditText.hint = field.label + " *"
+        }else{
+            inputEditText.hint = field.label
+        }
         inputEditText.inputType = inputType
 
 
@@ -48,6 +60,7 @@ class CustomizedEditText {
         }
 
         viewModel.setViewTagValues(field.tag, "")
+        checkInvalid()
         inputLayout.addView(inputEditText)
 
     }
@@ -55,6 +68,17 @@ class CustomizedEditText {
     fun getEditText(): View {
         return inputLayout
     }
+
+    fun checkInvalid(){
+        mContext?.getLifeCycleOwner()?.let{
+            mViewModel.isViewInputValid.observe(it){
+                if(it.get(mField.tag) == InputValidation.INVALID){
+                    inputLayout.error = "Invalid Input"
+                }
+            }
+        }
+    }
+
 
 
 }

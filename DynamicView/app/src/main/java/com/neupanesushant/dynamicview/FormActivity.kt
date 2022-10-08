@@ -19,6 +19,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.neupanesushant.dynamicview.data.model.DynamicFormItem
+import com.neupanesushant.dynamicview.data.model.InputValidation
 import com.neupanesushant.dynamicview.databinding.ActivityFormBinding
 import com.neupanesushant.dynamicview.databinding.ActivityMainBinding
 import com.neupanesushant.dynamicview.factories.ViewFactory
@@ -33,6 +34,8 @@ class FormActivity : AppCompatActivity() {
     private lateinit var fieldsList : List<DynamicFormItem>
     private lateinit var tagValueMapUpdated : HashMap<String, String>
     private var inputString = ""
+    private var isValid = true
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,12 +76,25 @@ class FormActivity : AppCompatActivity() {
             fieldsList.forEach {
                 if(it.code == CODE){
                     it.fields.forEach {
+
                         val value = viewModel.viewTagValues.value?.get(it.tag)
+
+                        if(it.regex != null){
+                            val regex = Regex(it.regex)
+                            if(value!!.matches(regex)){
+                                viewModel.setViewInputValidation(it.tag, InputValidation.VALID)
+                            }else{
+                                viewModel.setViewInputValidation(it.tag, InputValidation.INVALID)
+                                isValid = false
+                            }
+                        }
                         val formattedString = "The value of ${it.tag} is : $value \n"
                         inputString += formattedString
                     }
-                    Log.i("TAG", inputString)
-                    alertDialogShowsInput(inputString)
+
+                    if(isValid){
+                        alertDialogShowsInput(inputString)
+                    }
                 }
             }
         }

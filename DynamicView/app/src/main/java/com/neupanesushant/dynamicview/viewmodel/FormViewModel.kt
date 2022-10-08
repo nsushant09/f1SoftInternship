@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.neupanesushant.dynamicview.data.model.DynamicFormItem
+import com.neupanesushant.dynamicview.data.model.InputValidation
 import com.neupanesushant.dynamicview.data.model.Occupation
 import com.neupanesushant.dynamicview.domain.DynamicItemUseCase
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -24,6 +25,11 @@ class FormViewModel(private val dynamicItemUseCase: DynamicItemUseCase) : ViewMo
     val viewTagValues : LiveData<HashMap<String,String>> get() = _viewTagValues
 
     private val tempViewTagValues = HashMap<String, String>()
+
+    private val _isViewInputValid = MutableLiveData<HashMap<String,InputValidation>>()
+    val isViewInputValid : LiveData<HashMap<String,InputValidation>> get() = _isViewInputValid
+
+    private val tempViewInputValid = HashMap<String, InputValidation>()
 
     private val disposable = CompositeDisposable()
 
@@ -57,6 +63,11 @@ class FormViewModel(private val dynamicItemUseCase: DynamicItemUseCase) : ViewMo
     fun setViewTagValues(key : String, value : String){
         tempViewTagValues.put(key, value)
         _viewTagValues.value = tempViewTagValues
+    }
+
+    fun setViewInputValidation(tag : String, isValid : InputValidation){
+        tempViewInputValid.put(tag, isValid)
+        _isViewInputValid.value = tempViewInputValid
     }
 
 }
