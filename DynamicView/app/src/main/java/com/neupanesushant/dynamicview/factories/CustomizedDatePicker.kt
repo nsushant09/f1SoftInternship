@@ -2,6 +2,7 @@ package com.neupanesushant.dynamicview.factories
 
 import android.content.Context
 import android.view.View
+import android.widget.LinearLayout
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.datepicker.CalendarConstraints
@@ -25,24 +26,35 @@ class CustomizedDatePicker {
         } else {
             inputMode = INPUT_MODE_CALENDAR
         }
-        val calenderConstraints = CalendarConstraints.Builder()
-            .setValidator(DateValidatorPointBackward.now())
-            .build()
 
         datePicker = MaterialDatePicker.Builder.datePicker()
             .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
             .setInputMode(inputMode)
             .setTitleText(field.label)
-            .setCalendarConstraints(calenderConstraints)
+            .setCalendarConstraints(getCalenderConstraints(field.disableFutureDates))
             .build()
 
 
         datePickerButton = MaterialButton(context)
         datePickerButton.text = field.label
+
+
         datePickerButton.setOnClickListener {
             val activity = context as FragmentActivity
             datePicker.show(activity.supportFragmentManager, "TAG")
         }
+    }
+
+    private fun getCalenderConstraints(disableFutureDates: Boolean): CalendarConstraints {
+
+        if (disableFutureDates) {
+            return CalendarConstraints.Builder()
+                .setValidator(DateValidatorPointBackward.now())
+                .build()
+        }
+
+        return CalendarConstraints.Builder()
+            .build()
     }
 
     fun getDatePickerButton(): View {

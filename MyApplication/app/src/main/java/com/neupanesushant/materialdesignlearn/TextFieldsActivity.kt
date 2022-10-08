@@ -21,5 +21,6 @@ class TextFieldsActivity : AppCompatActivity() {
         val dropDownAdapter = ArrayAdapter(baseContext, R.layout.items_list, dropDownItems)
         (binding.textInputDropDown.editText as? AutoCompleteTextView)?.setAdapter(dropDownAdapter)
 
+
     }
 }

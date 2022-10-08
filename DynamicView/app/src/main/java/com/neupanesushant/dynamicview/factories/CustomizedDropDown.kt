@@ -4,7 +4,9 @@ import android.app.Activity
 import android.content.Context
 import android.util.Log
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.LinearLayout
 import android.widget.Spinner
 import com.google.android.material.textfield.TextInputLayout
 import com.neupanesushant.dynamicview.R
@@ -25,6 +27,7 @@ class CustomizedDropDown {
 
     private val inputLayout: TextInputLayout
     private val spinner: Spinner
+    private lateinit var occupationsList : List<String>
 
     constructor(context: Context, viewModel: FormViewModel, field: Field) {
 
@@ -38,10 +41,32 @@ class CustomizedDropDown {
         inputLayout.hint = field.label
         spinner.tag = field.tag
 
+        val inputLayoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+
+        inputLayoutParams.topMargin = 8
+        inputLayoutParams.bottomMargin = 8
+
+        inputLayout.layoutParams = inputLayoutParams
+
+        viewModel.setViewTagValues(field.tag, "")
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
+                viewModel.setViewTagValues(field.tag, occupationsList.get(position))
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                viewModel.setViewTagValues(field.tag, "")
+            }
+
+        }
+
         context?.getLifeCycleOwner()?.let{
-            Log.i("TAG", "Inside lifecycle owner i.e lifecycle is sucessfull")
             viewModel.occupationsList.observe(it){
                 val dropDownItems: List<String> = getOccupationStringList(it)
+                occupationsList = dropDownItems
                 val dropdownAdapter = ArrayAdapter(context, R.layout.items_list, dropDownItems)
                 spinner.adapter = dropdownAdapter
                 inputLayout.addView(spinner)

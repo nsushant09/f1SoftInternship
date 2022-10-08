@@ -20,6 +20,11 @@ class FormViewModel(private val dynamicItemUseCase: DynamicItemUseCase) : ViewMo
     private val _occupationsList = MutableLiveData<List<Occupation>>()
     val occupationsList : LiveData<List<Occupation>> get() = _occupationsList
 
+    private val _viewTagValues = MutableLiveData<HashMap<String, String>>()
+    val viewTagValues : LiveData<HashMap<String,String>> get() = _viewTagValues
+
+    private val tempViewTagValues = HashMap<String, String>()
+
     private val disposable = CompositeDisposable()
 
     fun getItemsList() {
@@ -47,6 +52,11 @@ class FormViewModel(private val dynamicItemUseCase: DynamicItemUseCase) : ViewMo
                 }
 
         )
+    }
+
+    fun setViewTagValues(key : String, value : String){
+        tempViewTagValues.put(key, value)
+        _viewTagValues.value = tempViewTagValues
     }
 
 }
