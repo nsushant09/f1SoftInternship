@@ -2,6 +2,7 @@ package com.neupanesushant.dynamicview
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
@@ -38,7 +39,7 @@ class FormActivity : AppCompatActivity() {
         }
 
         viewModel.itemsList.observe(this) {
-            Log.i("TAG", "Observing teh dynamic form list")
+            binding.progressIndicator.visibility = View.GONE
             fieldsList = it
             it.forEach {
                 if (it.code == CODE) {
@@ -82,9 +83,8 @@ class FormActivity : AppCompatActivity() {
                     }
 
                     if (isValid) {
-//                        alertDialogShowsInput(inputString)
+                        alertDialogShowsInput(inputString)
                     }
-                    alertDialogShowsInput(inputString)
                 }
             }
         }

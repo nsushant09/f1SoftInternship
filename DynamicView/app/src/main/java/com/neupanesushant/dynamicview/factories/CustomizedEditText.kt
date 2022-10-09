@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import androidx.core.widget.addTextChangedListener
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.neupanesushant.dynamicview.R
 import com.neupanesushant.dynamicview.data.model.Field
 import com.neupanesushant.dynamicview.data.model.InputValidation
 import com.neupanesushant.dynamicview.getLifeCycleOwner
@@ -22,7 +23,9 @@ class CustomizedEditText {
 
     constructor(context: Context, viewModel: FormViewModel, field: Field, inputType: Int) {
         inputLayout = TextInputLayout(context)
-        inputEditText = TextInputEditText(context)
+
+        //pass inputlayout context to achieve material design results.
+        inputEditText = TextInputEditText(inputLayout.context)
         mContext = context
         mViewModel = viewModel
         mField = field

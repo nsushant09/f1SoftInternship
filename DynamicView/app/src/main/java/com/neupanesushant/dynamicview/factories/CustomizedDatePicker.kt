@@ -12,6 +12,9 @@ import com.google.android.material.datepicker.MaterialDatePicker.INPUT_MODE_TEXT
 import com.neupanesushant.dynamicview.data.model.Field
 import com.neupanesushant.dynamicview.viewmodel.FormViewModel
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class CustomizedDatePicker {
@@ -22,6 +25,8 @@ class CustomizedDatePicker {
     constructor(context: Context, viewModel: FormViewModel, field: Field) {
 
         val inputMode: Int
+        val formatter = SimpleDateFormat("yyyy.MM.dd")
+
         if (field.inputType.equals("TEXT")) {
             inputMode = INPUT_MODE_TEXT
         } else {
@@ -36,9 +41,11 @@ class CustomizedDatePicker {
             .setPositiveButtonText("Set Date")
             .build()
 
-        viewModel.setViewTagValues(field.tag, "0000.00.00")
+
+
+
+        viewModel.setViewTagValues(field.tag, formatter.format(Date.from(LocalDate.now().atStartOfDay().toInstant(ZoneOffset.UTC))))
         datePicker.addOnPositiveButtonClickListener {
-            val formatter = SimpleDateFormat("yyyy.MM.dd")
             viewModel.setViewTagValues(field.tag, formatter.format(Date(it)))
         }
 

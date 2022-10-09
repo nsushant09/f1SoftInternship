@@ -111,10 +111,9 @@
         <item name="android:layout_marginTop">16dp</item>
     </style>
 
-    <style name="textInputEditTextStyling">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">2dp</item>
+    <style name="textInputEditTextStyling" >
+        <item name="android:cursorVisible">true</item>
+        <item name="android:textCursorDrawable">?attr/colorPrimary</item>
     </style>
 
     <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
