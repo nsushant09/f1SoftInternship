@@ -83,8 +83,9 @@ class FormActivity : AppCompatActivity() {
                     }
 
                     if (isValid) {
-                        alertDialogShowsInput(inputString)
+//                        alertDialogShowsInput(inputString)
                     }
+                    alertDialogShowsInput(inputString)
                 }
             }
         }

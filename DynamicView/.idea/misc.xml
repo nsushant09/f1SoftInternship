@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_calendar_month_24.xml" value="0.1745" />
         <entry key="app/src/main/res/layout/activity_form.xml" value="0.3494791666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3494791666666667" />
         <entry key="app/src/main/res/layout/items_list.xml" value="0.4432291666666667" />

@@ -45,11 +45,19 @@
         <item name="stringAttributeTest">@string/test_string</item>
         <item name="paragraphTextPaddingAttr">@dimen/paragraphTextPadding</item>
         <item name="integerAttributeTest">2</item>
+
+        <item name="materialCalendarTheme">@style/ThemeOverlay.App.MaterialCalendar</item>
+        <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.App.MaterialCalendarFullScreen</item>
+
     </style>
 
     <style name="Theme.MaterialDesignLearn.DateText">
         <item name="android:textSize">24sp</item>
         <item name="android:padding">4dp</item>
         <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="ThemeOverlay.App.MaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorSurface">@color/white</item>
     </style>
 </resources>

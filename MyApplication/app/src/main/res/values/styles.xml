@@ -6,4 +6,11 @@
         <item name="cornerSize">8dp</item>
     </style>
 
+    <style name="ThemeOverlay.App.MaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorSurface">@color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.App.MaterialCalendarFullScreen" parent="ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen">
+        <item name="colorSurface">@color/white</item>
+    </style>
 </resources>

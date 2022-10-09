@@ -30,7 +30,7 @@ class ViewFactory(
             return CustomizedEditText(context, viewModel, field, inputType).getEditText()
 
         } else if (field.inputType.equals("DATE")) {
-            return CustomizedDatePicker(context, viewModel, field).getDatePickerButton()
+            return CustomizedDatePicker(context, viewModel, field).getView()
         } else if (field.inputType.equals("DROPDOWN")) {
             return CustomizedDropDown(context, viewModel, field).getDropDown()
         } else {
