@@ -1,8 +1,6 @@
 package com.neupanesushant.dynamicview.factories
 
-import android.app.Activity
 import android.content.Context
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -12,22 +10,14 @@ import com.google.android.material.textfield.TextInputLayout
 import com.neupanesushant.dynamicview.R
 import com.neupanesushant.dynamicview.data.model.Field
 import com.neupanesushant.dynamicview.data.model.Occupation
-import com.neupanesushant.dynamicview.domain.DynamicItemUseCase
 import com.neupanesushant.dynamicview.getLifeCycleOwner
 import com.neupanesushant.dynamicview.viewmodel.FormViewModel
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.kotlin.subscribeBy
-import io.reactivex.rxjava3.schedulers.Schedulers
-import org.koin.java.KoinJavaComponent.inject
-import java.util.*
-import kotlin.collections.ArrayList
 
 class CustomizedDropDown {
 
     private val inputLayout: TextInputLayout
     private val spinner: Spinner
-    private lateinit var occupationsList : List<String>
+    private lateinit var occupationsList: List<String>
 
     constructor(context: Context, viewModel: FormViewModel, field: Field) {
 
@@ -39,9 +29,9 @@ class CustomizedDropDown {
         )
         spinner = Spinner(context)
 
-        if(field.required){
+        if (field.required) {
             inputLayout.hint = field.label + " *"
-        }else{
+        } else {
             inputLayout.hint = field.label
         }
 
@@ -58,7 +48,7 @@ class CustomizedDropDown {
         inputLayout.layoutParams = inputLayoutParams
 
         viewModel.setViewTagValues(field.tag, "")
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
                 viewModel.setViewTagValues(field.tag, occupationsList.get(position))
             }
@@ -69,8 +59,8 @@ class CustomizedDropDown {
 
         }
 
-        context?.getLifeCycleOwner()?.let{
-            viewModel.occupationsList.observe(it){
+        context?.getLifeCycleOwner()?.let {
+            viewModel.occupationsList.observe(it) {
                 val dropDownItems: List<String> = getOccupationStringList(it)
                 occupationsList = dropDownItems
                 val dropdownAdapter = ArrayAdapter(context, R.layout.items_list, dropDownItems)
@@ -84,7 +74,7 @@ class CustomizedDropDown {
         return inputLayout
     }
 
-    fun getOccupationStringList(occupationList : List<Occupation>) : List<String>{
+    fun getOccupationStringList(occupationList: List<Occupation>): List<String> {
         return occupationList.map {
             it.value
         }

@@ -2,7 +2,6 @@ package com.neupanesushant.dynamicview.factories
 
 import android.content.Context
 import android.view.View
-import android.widget.LinearLayout
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.datepicker.CalendarConstraints
@@ -12,6 +11,8 @@ import com.google.android.material.datepicker.MaterialDatePicker.INPUT_MODE_CALE
 import com.google.android.material.datepicker.MaterialDatePicker.INPUT_MODE_TEXT
 import com.neupanesushant.dynamicview.data.model.Field
 import com.neupanesushant.dynamicview.viewmodel.FormViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CustomizedDatePicker {
 
@@ -32,22 +33,28 @@ class CustomizedDatePicker {
             .setInputMode(inputMode)
             .setTitleText(field.label)
             .setCalendarConstraints(getCalenderConstraints(field.disableFutureDates))
+            .setPositiveButtonText("Set Date")
             .build()
 
+        viewModel.setViewTagValues(field.tag, "0000.00.00")
+        datePicker.addOnPositiveButtonClickListener {
+            val formatter = SimpleDateFormat("yyyy.MM.dd")
+            viewModel.setViewTagValues(field.tag, formatter.format(Date(it)))
+        }
 
         datePickerButton = MaterialButton(context)
 
-        if(field.required){
+        if (field.required) {
             datePickerButton.text = field.label + " *"
-        }else{
+        } else {
             datePickerButton.text = field.label
         }
-
 
         datePickerButton.setOnClickListener {
             val activity = context as FragmentActivity
             datePicker.show(activity.supportFragmentManager, "TAG")
         }
+
     }
 
     private fun getCalenderConstraints(disableFutureDates: Boolean): CalendarConstraints {

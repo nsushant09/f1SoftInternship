@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-fun netModule(baseUrl : String) = module{
+fun netModule(baseUrl: String) = module {
     single {
         GsonBuilder().create()
     }
@@ -25,7 +25,7 @@ fun netModule(baseUrl : String) = module{
             .build()
     }
 
-    single<EndPoints>{
+    single<EndPoints> {
         get<Retrofit>().create(EndPoints::class.java)
     }
 }

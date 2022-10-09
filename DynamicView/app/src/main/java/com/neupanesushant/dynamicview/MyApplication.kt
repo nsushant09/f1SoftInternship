@@ -11,7 +11,7 @@ import org.koin.core.context.startKoin
 class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        startKoin{
+        startKoin {
             androidContext(this@MyApplication)
             modules(domainModule(), netModule(Constants.BASE_URL), viewModelModules())
         }

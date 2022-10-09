@@ -2,12 +2,12 @@ package com.neupanesushant.dynamicview.factories
 
 import android.content.Context
 import android.text.InputType
+import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.LinearLayout
 import androidx.core.widget.addTextChangedListener
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import com.neupanesushant.dynamicview.R
 import com.neupanesushant.dynamicview.data.model.Field
 import com.neupanesushant.dynamicview.data.model.InputValidation
 import com.neupanesushant.dynamicview.getLifeCycleOwner
@@ -16,12 +16,12 @@ import com.neupanesushant.dynamicview.viewmodel.FormViewModel
 class CustomizedEditText {
     private val inputLayout: TextInputLayout
     private val inputEditText: TextInputEditText
-    private val mViewModel : FormViewModel
-    private val mContext : Context
-    private val mField : Field
+    private val mViewModel: FormViewModel
+    private val mContext: Context
+    private val mField: Field
 
     constructor(context: Context, viewModel: FormViewModel, field: Field, inputType: Int) {
-        inputLayout = TextInputLayout(context, null, R.attr.textInputLayoutAttribute)
+        inputLayout = TextInputLayout(context)
         inputEditText = TextInputEditText(context)
         mContext = context
         mViewModel = viewModel
@@ -43,15 +43,17 @@ class CustomizedEditText {
         inputLayout.setPadding(4, 2, 4, 2)
         inputEditText.layoutParams = inputEditTextParams
 
-        if(field.required){
+        if (field.required) {
             inputEditText.hint = field.label + " *"
-        }else{
+        } else {
             inputEditText.hint = field.label
         }
+
         inputEditText.inputType = inputType
 
 
         if (inputType == InputType.TYPE_TEXT_VARIATION_PASSWORD) {
+            inputEditText.transformationMethod = PasswordTransformationMethod.getInstance()
             inputLayout.endIconMode = TextInputLayout.END_ICON_PASSWORD_TOGGLE
         }
         inputEditText.addTextChangedListener {
@@ -69,16 +71,15 @@ class CustomizedEditText {
         return inputLayout
     }
 
-    fun checkInvalid(){
-        mContext?.getLifeCycleOwner()?.let{
-            mViewModel.isViewInputValid.observe(it){
-                if(it.get(mField.tag) == InputValidation.INVALID){
+    fun checkInvalid() {
+        mContext?.getLifeCycleOwner()?.let {
+            mViewModel.isViewInputValid.observe(it) {
+                if (it.get(mField.tag) == InputValidation.INVALID) {
                     inputLayout.error = "Invalid Input"
                 }
             }
         }
     }
-
 
 
 }

@@ -1,6 +1,6 @@
 package com.neupanesushant.dynamicview.data.model
 
-enum class InputValidation{
+enum class InputValidation {
     VALID,
     INVALID
 }

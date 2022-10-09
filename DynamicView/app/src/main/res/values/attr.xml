@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <attr name="textInputLayoutAttribute" format="reference"/>
-    <attr name="textInputEditTextAttribute" format="reference"/>
+    <attr name="textInputLayoutAttribute" format="reference" />
+    <attr name="textInputEditTextAttribute" format="reference" />
 
 </resources>
