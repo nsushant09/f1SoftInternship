@@ -19,7 +19,7 @@ class TextFieldsActivity : AppCompatActivity() {
 
         val dropDownItems = listOf<String>("Nepal", "India", "Australia", "United Kingdom")
         val dropDownAdapter = ArrayAdapter(baseContext, R.layout.items_list, dropDownItems)
-        (binding.textInputDropDown.editText as? AutoCompleteTextView)?.setAdapter(dropDownAdapter)
+        binding.autoCompleteTextView.setAdapter(dropDownAdapter)
 
 
     }

@@ -2,11 +2,13 @@ package com.neupanesushant.dynamicview
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import com.neupanesushant.dynamicview.data.model.DynamicFormItem
 import com.neupanesushant.dynamicview.data.model.InputValidation
 import com.neupanesushant.dynamicview.databinding.ActivityFormBinding
@@ -33,6 +35,8 @@ class FormActivity : AppCompatActivity() {
         supportActionBar?.setTitle(CODE)
         setContentView(binding.root)
 
+        binding.layoutFormMain.gravity = Gravity.CENTER_HORIZONTAL
+
         viewModel.getItemsList()
         viewModel.viewTagValues.observe(this) {
             tagValueMapUpdated = it
@@ -51,15 +55,22 @@ class FormActivity : AppCompatActivity() {
             binding.layoutFormMain.addView(addSubmitButton())
         }
 
+        viewModel.showErrorSnackbar.observe(this){
+            if(it){
+                showSnackbar("Error on fetching data from network")
+            }
+        }
+
 
     }
 
     fun addSubmitButton(): MaterialButton {
         btnSubmit.text = "Submit"
         val btnSubmitParams = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT,
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
+        btnSubmitParams.topMargin = 8
         btnSubmit.layoutParams = btnSubmitParams
         btnSubmit.setOnClickListener {
             fieldsList.forEach {
@@ -83,9 +94,9 @@ class FormActivity : AppCompatActivity() {
                     }
 
                     if (isValid) {
-//                        alertDialogShowsInput(inputString)
+                        alertDialogShowsInput(inputString)
                     }
-                    alertDialogShowsInput(inputString)
+//                    alertDialogShowsInput(inputString)
                 }
             }
         }
@@ -100,6 +111,13 @@ class FormActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
             .show()
+    }
+
+    fun showSnackbar(message : String){
+        val snackBar = Snackbar.make(binding.root, message, Snackbar.LENGTH_INDEFINITE)
+            snackBar.setAction("Cancel"){
+                snackBar.dismiss()
+            }
     }
 
 

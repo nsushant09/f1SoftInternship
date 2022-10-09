@@ -65,7 +65,7 @@ class CustomizedDatePicker {
             inputEditText.hint = field.label
         }
 
-        inputEditText.inputType = InputType.TYPE_DATETIME_VARIATION_DATE
+        inputEditText.inputType = InputType.TYPE_NULL
         inputLayout.endIconMode = TextInputLayout.END_ICON_CUSTOM
         inputLayout.setEndIconDrawable(R.drawable.ic_baseline_calendar_month_24)
         inputLayout.addView(inputEditText)

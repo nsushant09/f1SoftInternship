@@ -30,6 +30,9 @@ class FormViewModel(private val dynamicItemUseCase: DynamicItemUseCase) : ViewMo
 
     private val tempViewInputValid = HashMap<String, InputValidation>()
 
+    private val _showErrorSnackbar = MutableLiveData<Boolean>()
+    val showErrorSnackbar : LiveData<Boolean> get() = _showErrorSnackbar
+
     private val disposable = CompositeDisposable()
 
     fun getItemsList() {
@@ -40,8 +43,7 @@ class FormViewModel(private val dynamicItemUseCase: DynamicItemUseCase) : ViewMo
                 .subscribe({
                     _itemsList.value = it.dynamicForm
                 }, {
-                    Log.i("TAG", "Error on subscription name : $it")
-
+                    _showErrorSnackbar.value = true
                 })
         )
 
@@ -67,6 +69,10 @@ class FormViewModel(private val dynamicItemUseCase: DynamicItemUseCase) : ViewMo
     fun setViewInputValidation(tag: String, isValid: InputValidation) {
         tempViewInputValid.put(tag, isValid)
         _isViewInputValid.value = tempViewInputValid
+    }
+
+    fun setSnackBarError(boolean : Boolean){
+        _showErrorSnackbar.value = boolean
     }
 
 }

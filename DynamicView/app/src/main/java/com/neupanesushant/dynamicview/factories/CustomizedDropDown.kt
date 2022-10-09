@@ -2,10 +2,7 @@ package com.neupanesushant.dynamicview.factories
 
 import android.content.Context
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.LinearLayout
-import android.widget.Spinner
+import android.widget.*
 import com.google.android.material.textfield.TextInputLayout
 import com.neupanesushant.dynamicview.R
 import com.neupanesushant.dynamicview.data.model.Field
@@ -64,10 +61,11 @@ class CustomizedDropDown {
                 val dropDownItems: List<String> = getOccupationStringList(it)
                 occupationsList = dropDownItems
                 val dropdownAdapter = ArrayAdapter(context, R.layout.items_list, dropDownItems)
-                spinner.adapter = dropdownAdapter
+                spinner.setAdapter(dropdownAdapter)
                 inputLayout.addView(spinner)
             }
         }
+
     }
 
     fun getDropDown(): View {

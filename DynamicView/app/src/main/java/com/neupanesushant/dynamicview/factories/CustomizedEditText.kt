@@ -61,8 +61,9 @@ class CustomizedEditText {
         }
         inputEditText.addTextChangedListener {
             viewModel.setViewTagValues(field.tag, it.toString())
-
+            inputLayout.isErrorEnabled = false
         }
+
 
         viewModel.setViewTagValues(field.tag, "")
         checkInvalid()
@@ -78,6 +79,7 @@ class CustomizedEditText {
         mContext?.getLifeCycleOwner()?.let {
             mViewModel.isViewInputValid.observe(it) {
                 if (it.get(mField.tag) == InputValidation.INVALID) {
+                    inputLayout.isErrorEnabled = true
                     inputLayout.error = "Invalid Input"
                 }
             }
