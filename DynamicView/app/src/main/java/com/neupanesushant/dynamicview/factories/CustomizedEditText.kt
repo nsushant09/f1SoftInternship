@@ -61,6 +61,7 @@ class CustomizedEditText {
         }
         inputEditText.addTextChangedListener {
             viewModel.setViewTagValues(field.tag, it.toString())
+            viewModel.setViewInputValidation(field.tag, InputValidation.VALID)
             inputLayout.isErrorEnabled = false
         }
 

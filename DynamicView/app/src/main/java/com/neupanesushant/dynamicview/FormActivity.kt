@@ -3,7 +3,6 @@ package com.neupanesushant.dynamicview
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
-import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
@@ -36,6 +35,7 @@ class FormActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.layoutFormMain.gravity = Gravity.CENTER_HORIZONTAL
+        binding.layoutFormMain.isScrollContainer = true
 
         viewModel.getItemsList()
         viewModel.viewTagValues.observe(this) {
@@ -43,7 +43,6 @@ class FormActivity : AppCompatActivity() {
         }
 
         viewModel.itemsList.observe(this) {
-            binding.progressIndicator.visibility = View.GONE
             fieldsList = it
             it.forEach {
                 if (it.code == CODE) {
@@ -55,8 +54,8 @@ class FormActivity : AppCompatActivity() {
             binding.layoutFormMain.addView(addSubmitButton())
         }
 
-        viewModel.showErrorSnackbar.observe(this){
-            if(it){
+        viewModel.showErrorSnackbar.observe(this) {
+            if (it) {
                 showSnackbar("Error on fetching data from network")
             }
         }
@@ -81,9 +80,7 @@ class FormActivity : AppCompatActivity() {
 
                         if (it.regex != null) {
                             val regex = Regex(it.regex)
-                            if (value!!.matches(regex)) {
-                                viewModel.setViewInputValidation(it.tag, InputValidation.VALID)
-                            } else {
+                            if(!value!!.matches(regex)) {
                                 viewModel.setViewInputValidation(it.tag, InputValidation.INVALID)
                                 isValid = false
                             }
@@ -96,7 +93,6 @@ class FormActivity : AppCompatActivity() {
                     if (isValid) {
                         alertDialogShowsInput(inputString)
                     }
-//                    alertDialogShowsInput(inputString)
                 }
             }
         }
@@ -113,11 +109,12 @@ class FormActivity : AppCompatActivity() {
             .show()
     }
 
-    fun showSnackbar(message : String){
+    fun showSnackbar(message: String) {
         val snackBar = Snackbar.make(binding.root, message, Snackbar.LENGTH_INDEFINITE)
-            snackBar.setAction("Cancel"){
-                snackBar.dismiss()
-            }
+        snackBar.setAction("Cancel") {
+            snackBar.dismiss()
+        }
+        snackBar.show()
     }
 
 
